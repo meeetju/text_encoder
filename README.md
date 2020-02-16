@@ -1,1 +1,1 @@
-# encoder
+# text encoder
