@@ -87,4 +87,4 @@ To run tests and check coverage execute:
 	
 ## License
 
-* [LICENSE](LICENSE.md)
+* [LICENSE](LICENSE)
