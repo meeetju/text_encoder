@@ -1,0 +1,21 @@
+@startuml
+hide empty methods
+hide empty attributes
+
+class Main {
+}
+
+Main --> CmdEncoderFactory
+CmdEncoderFactory --> NullCoder
+CmdEncoderFactory --> Encoder
+CmdEncoderFactory --> HeadedEncoder
+CmdEncoderFactory --> Cesar
+CmdEncoderFactory --> Xor
+CmdEncoderFactory --> ScalarEncryptionKey
+CmdEncoderFactory --> IterableEncryptionKey
+CmdEncoderFactory --> StringReader
+CmdEncoderFactory --> ConsoleReader
+CmdEncoderFactory --> ConsoleWriter
+CmdEncoderFactory --> FileReader
+CmdEncoderFactory --> FileWriter
+@enduml

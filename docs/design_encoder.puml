@@ -1,0 +1,92 @@
+@startuml
+hide empty methods
+hide empty attributes
+
+class Encoder {
+  +encode()
+}
+
+class NullCoder {
+  +encode()
+}
+
+abstract class Reader {
+  {abstract}read()
+}
+
+class StringReader {
+  +read()
+}
+
+class FileReader {
+  +read()
+}
+
+class ConsoleReader {
+  +read()
+}
+
+abstract class Writer {
+  {abstract}write()
+}
+
+class StringWriter {
+  +write()
+  +get()
+}
+
+class FileWriter {
+  +write()
+  +finish()
+}
+
+class ConsoleWriter {
+  +write()
+}
+
+abstract class Coder {
+  {abstract}encode_char()
+}
+
+class Cesar {
+  +encode_char()
+}
+
+class Xor {
+  +encode_char()
+}
+
+abstract class EncryptionKey {
+  {abstract}get()
+}
+
+class ScalarEncryptionKey {
+  +get()
+}
+
+class IterableEncryptionKey {
+  +get()
+}
+
+Encoder --> Reader
+Encoder --> Writer
+Encoder --> Coder
+Coder -left-> EncryptionKey
+
+NullCoder --> Reader
+NullCoder --> Writer
+
+Coder <|-- Cesar
+Coder <|-- Xor
+
+Reader <|-- StringReader
+Reader <|-- FileReader
+Reader <|-- ConsoleReader
+
+Writer <|-- StringWriter
+Writer <|-- FileWriter
+Writer <|-- ConsoleWriter
+
+EncryptionKey <|-- ScalarEncryptionKey
+EncryptionKey <|-- IterableEncryptionKey
+@enduml
